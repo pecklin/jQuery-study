@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize</title>
+    <script src="../../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var ww = $(window).width();
+            var wh = $(window).height();
+            if_layout();
+            // => 브라우저 로드할떄 호출
+            
+            // 연속적인 흐름으로 사용된 조건문에서 css속성은 수정을 되지만 추가/삭제는 불가능하다.
+            // => 각 조건문마다 동일한 css명령 주어야함.
+            function if_layout(){
+                if(ww >= 1200){
+                    $('#box').css({
+                        width: 1200,
+                        height: 500,
+                        backgroundColor: 'red',
+                        margin: '0 auto',
+                        float: none
+                    });
+                } //화면 최대 1999 ~ 최소 960
+                else if(ww < 1200  && ww >= 960){
+                    $("#box").css({
+                        width: 960,
+                        height: 400,
+                        backgroundColor: 'blue',
+                        float: 'right',
+                        margin: 0
+                    });
+                } // 화면 최대 959
+                else if(ww < 960){
+                    $("#box").css({
+                        widht: ww,
+                        height: 400,
+                        backgroundColor: 'green',
+                        float : 'none'
+                    });
+                }
+            }
+
+            $(window).resize(function(){
+                ww = $(window).width();
+                if_layout();
+            });
+        });
+    </script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>

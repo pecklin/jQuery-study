@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrap{
+    position: absolute;
+}
+
+.page{
+    position: relative;
+}
+
+.in_Page{
+    background-color: gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#width_align > .page {
+    float: left;
+}
+
+.but{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="../JQuery보관폴더/jquery-ui.min.js"></script>
+    <style>
+        /* #box{    -> 인라인 부분 59번째줄
+            width: 300px;
+            height: 300px;
+            background-color: cornflowerblue;
+        } */
+    </style>
+    <script>
+        $(document).ready(function(){
+            /* animate 
+            => css의 속성중 크기, 위치, 여백값, 투명도를 변경하여
+            지정시간동안 변화값을 지정할떄 사용하는 명령
+            1) 크기 => width, height 
+            2) 위치값 => top, left, bottom, right (position필수)
+            => 스크롤의 위치값
+            3) 여백값 => margin, padding
+            4) 투명도 => opacity
+            
+            => 형태
+            $('선택자').animate({
+               속성: 속성값,
+               속성: 속성값, ... 
+            }, 시간, 가속도, 콜백함수));
+
+            => JS에서의 시간단위
+            : 밀리세컨드(1000분에 1) 1초 => 1000
+            -> 시간, 가속도, 콜백함수 생략가능
+            -> 기본 플러그인에서 일정한 속도(linear), 가속도(easing)
+            jquery UI 플러그인을 추가하면 여러가지 추가 가속도 적용가능
+            -> 북마크 -> 코딩 -> 링크.
+            function(){} -> 모션이 끝난 후 새로운 모션 이어서 실행 
+            => .stop()
+            모션/ 효과 중첩을 끊어주기
+            (click, hover 등 여러번 반복되는 부분 끊어줌)
+            
+            */
+
+            /* $('div').css({
+                width: 300,
+                height: 300,
+                backgroundColor: 'red',
+            }).animate({
+                marginLeft: 300,
+
+            },2000, function(){
+                $(this).animate({
+                    width: 800,
+                });
+            }); */
+
+            // 문제 
+            // div 가로 300, 세로 300 (배경색 지정)
+            // div 클릭하면 가로 1000만큼 2초동안 크기 커지도록 작성하기
+
+            /* $('#box').css({ -> click
+                width: 300,
+                height: 300,
+                backgroundColor: 'cornflowerblue'
+            }).click(function(){
+                $(this).animate({
+                    width: 1000
+                }, 2000)
+            }); */
+
+            $('div').css({  //->hover
+                width: 300,
+                height: 300,
+                backgroundColor: 'cornflowerblue'
+            }).hover(function(){
+                //mouseEnter 실행식
+                $('#box').stop().animate({
+                    width: 500,
+                    height: 500
+                }, 2000, function(){
+                    $('#box').animate({
+                        backgroundColor: 'red'
+                    }, 2000);
+                });
+            }, function(){
+                //mouseLeave 실행식
+                $('#box').stop().animate({
+                    width: 300,
+                    height: 300,
+                    backgroundColor: 'aqua'
+                }, 2000, 'easeInExpo');
+            });
+
+        });     
+    </script>
+</head>
+<body>
+    <div id = "box">
+    </div>
+</body>
+</html>

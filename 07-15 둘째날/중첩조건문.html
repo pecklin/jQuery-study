@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩조건문</title>
+    <script>
+        // 1.세개의 숫자를 입력받고 body에 출력  
+        var n1 = Number(prompt('첫번쨰 숫자', ''));
+        var n2 = Number(prompt('두번쨰 숫자', ''));
+        var n3 = Number(prompt('세번째 숫자', ''));
+
+        document.write('<h1>' + '첫번째 숫자 = ' + n1 + '</h1>');
+        document.write('<h1>' + '두번째 숫자 = ' + n2 + '</h1>');
+        document.write('<h1>' + '세번째 숫자 = ' + n3 + '</h1>');
+        
+        // 2. 입력받은 세가지 수 중에 가장 큰 수를 찾아서 출력하기
+        // 가장 큰 수 = n1
+        // => n1-> n2-> n3 or n1-> n2-> n3
+        // 가장 큰 수 = n2
+        // => n2 -> n1 -> n3 or n2 -> n3 -> n1
+        // 가장 큰 수 = n3
+        // => n3 -> n1 -> n2 or n3 -> n2 -> n1
+
+        // 3. 가장 큰 수의 홀수와 짝수여부를 판단해서 홀수이면 홀수
+        //    짝수면 짝수라고 출력.
+
+        // 4. 두번째 큰 수와 가장 작은 수를 구해서 출력하기.
+        if(n1 > n2 && n1 > n3)
+        {
+            document.write('가장 큰 수는 ' + n1 , "<br>");
+            var pan = n1%2
+            if(pan == 1)
+            {
+                document.write("홀수입니다."+ "<br>");
+            }
+            else if(pan ==0)
+            {
+                document.write("짝수입니다.", "<br>");
+            }
+
+            if(n2>n3)
+            {
+                document.write("두번째 큰 수는"  + n2 , '<br>');
+                document.write("가장 작은 수는 " + n3 , '<br>');
+            }
+            else if(n3>n2)
+            {
+                document.write("두번째 큰 수는 " + n2 , '<br>');
+                document.write("가장 작은 수는 " + n3 , '<br>');
+            }
+        }else if(n2 > n1 && n2 > n3)
+        {
+            document.write('가장 큰 수는 ' + n2 + "<br>");
+            var pan = n2%2
+            if(pan == 1)
+            {
+                document.write("홀수입니다."+ "<br>");
+            }
+            else if(pan ==0)
+            {
+                document.write("짝수입니다.", "<br>");
+            }
+
+            if(n1>n3)
+            {
+                document.write("두번째 큰 수는 " + n1 , '<br>');
+                document.write("가장 작은 수는 " + n3 , '<br>');
+            }
+            else if(n3>n1)
+            {
+                document.write("두번째 큰 수는 " + n3 , '<br>');
+                document.write("가장 작은 수는 " + n1 , '<br>');
+            }
+        }else if(n3 > n1 && n3 > n2)
+        {
+            document.write('가장 큰 수는 ' + n3 + "<br>");
+            var pan = n3%2
+            if(pan == 1)
+            {
+                document.write("홀수입니다."+ "<br>");
+            }
+            else if(pan ==0)
+            {
+                document.write("짝수입니다.", "<br>");
+            }
+
+            if(n2>n1)
+            {
+                document.write("두번째 큰 수는 " + n2 , '<br>');
+                document.write("가장 작은 수는 " + n1 , '<br>');
+            }
+            else if(n1>n2)
+            {
+                document.write("두번째 큰 수는 " + n1 , '<br>');
+                document.write("가장 작은 수는 " + n2 , '<br>');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

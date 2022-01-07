@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Practice</title>
+    <script src="jquery-3.6.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 500px;
+            border: 10px solid darkblue;
+            margin: 50px auto;
+        }
+
+        #box>image{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // $('선택자').attr(); => 선택자의 속성값을 불러올때 사용하는 형태.
+            // => 태그에 옵션을 추가/수정할 수 있는 명령
+            // => css형태와 동일하게 사용가능
+            $('#box > img').css('width', '500');
+            // $('선택자').attr('속성명', '새값');
+            // $('선택자').attr('속성명', function(){});
+            // $('선택자').attr({
+            // '속성명1': '새값',
+            // .
+            // .
+            // .
+            // });
+            // $(선택자).attr({다중속성: function(){}...});
+            // 우선순위 확인
+            // 1. 태그<클래스<아이디
+            // 2. 스타일시트(CSS3)아래쪽으로 적혀질수록 우선순위가 높습니다.
+            // 3. css명령이 attr명령보다 우선순위가 높음
+            // 4. 속성의 값이 정확한 명령일수록 우선수위가 높다.
+            // ex) margin: 0 auto < float : left < position
+            // 우선순위 맞추기
+            // 1. 부모>자식객체 선택할때
+            // => 자식선택자(>) 사용 스타일 지정되어 있는 객체 
+            // 기존의 내용을 수정하고자 한다면 항상 자식선택자 형식으로 선택해야함
+            // 2. ID로 선택된 내용 수정시 
+            // => 클래스를 추가하여 수정을 해야 한다면 
+            // #아이디.클래스 빈공백 없이 아이디와 클래스명을 연속해서 작성
+
+            // $('선택자').removeAttr(); => 태그에 옵션 삭제
+            // 첫번째 box를 클릭하면, 1번 이미지를 2번 이미지로 교체
+            // 두번째 box를 클릭하면, 2번 이미지를 3번 이미지로 교체
+            // 세번째 box를 클릭하면, 1번이미지로 교체되어서 반복이 되도록 작성
+
+            var click_num = 0;
+            $('#box').click(function(){   //이미지 교체 해보기.
+                if(click_num == 0){
+                    // alert(click_num);
+                    $('#box > img').attr('src', '../07-22 넷째날/src/Moon1.jpg');
+                    click_num++;
+                }
+                else if(click_num==1){
+                    // alert(click_num);
+                    $('#box > img').attr('src', '../07-22 넷째날/src/Moon2.jpg');
+                    click_num++;
+                }
+                else if(click_num==2) {
+                    // alert(click_num);
+                    $('#box > img').attr('src', '../07-22 넷째날/src/Moon3.jpg');
+                    click_num=0;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="../07-22 넷째날/src/Moon1.jpg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+    <script>
+        //연결연산자
+        //=> 문자열을 합쳐서 하나의 문자열로 만드는 연산자
+        //서로 다른 형식을 출력할때 또는 같은 형식을 출력할때
+        //연결을 시켜서 출력시키고자 할때 사용
+        //=>+(플러스) / ,(콤마)
+        //=>출력문 중에서 document.write 출력문 안에서 작성시 ,(콤마)
+        // var a = 10;
+        // document.write('a='+ a + '<br>');
+        // document.write('a=a', ' ' , a);
+        //연산자
+        // var b = 10;
+        // var c = 5;
+        
+        // 1. 오칙연산자 : + - * / %
+        // 더하기(+)
+        // document.write(b+c, '<br>');
+        //빼기(-)
+        // document.write(b-c, '<br>');
+        //곱하기(*)
+        // document.write(b*c, '<br>');
+        //나누기(/)
+        // document.write(b/c, '<br>');
+        //나머지(%)
+        //=>첫번째 피연산자 값을 두번쨰 피연산자 값으로 나눈 나머지
+        //=>홀수(1)와 짝수(0)
+        // document.write(b%c, '<br><br>');
+        // 2. 복합대입연산자
+        //=>+=, -=, *=, /=, %=
+        //=>오칙연산자에서 동일한 변수에 여러번 대입을 하는 연산자
+        //=>오른쪽에 있는 값을 왼쪽에 있는 변수에 대입
+        //=>다른 다양한 연산자 결합하여 추가적인 의미를 가짐
+        // document.write(b+=5, "<br>"); //b=b+5 => b = 10+5 -> 15 -> b=15
+        // document.write(b-=5, '<br>'); //b=b-5 -> b= 15-5 -> 10 -> b=10
+        // document.write(b*=5, '<br>'); //b=b*5 -> b= 10*5 -> 50 -> b=50
+        // document.write(b/=5, '<br>'); //b=b/5 -> b= 50/5 -> 10 -> b=10
+        // document.write(b%=5, '<br><br>'); //b=b%5 -> b= 10%2 -> 0 -> b=0
+        // 3. 증감연산자
+        //=> 무조건 1씩 증가 또는 감소하는 연산 : ++, --
+        //=> 전위(++d or --d), 후위(d++ or d--)
+        //실행문 밖에서 사용시 차이가 없음
+        //다른 연산자나 함수와 함께 사용된다면 차이 있음
+        // var d = 0; 
+       /*  d++;
+        document.write(d, '<br>');
+        d--;
+        document.write(d, '<br>');
+        ++d;
+        document.write(d, '<br>');
+        --d;
+        document.write(d, '<br>'); 
+        => 실행문 밖에서는 사용시 차이가 없음*/
+        // => 후위증감연산자
+        //=> d의 값을 먼저 출력한 뒤 증감연산자 동작
+        // document.write(d++, '<br>');
+        //d=0
+        // document.write(d--, '<br>');
+        //d=1
+        // =>전위증감연산자
+        //=> d의 값을 1증감시킨 뒤 d에 값을 할당하고 동작
+        // document.write(++d, '<br>');
+        //d=1
+        // document.write(--d, '<br>');
+        //d=0
+        // 4. 비교연산자
+        //>, <, >=, <=, != , ==
+        // 두개 이상의 항을 비교할때 사용하는 연산자
+        //=>참(True), 거짓(False)인지에 대한 결과를 사용
+        var aa= 30;
+        var bb= 20;
+        //aa > bb 
+        // document.write(aa>bb, '<br>');
+        //aa < bb
+        // document.write(aa<bb, '<br>');
+        // aa >= bb 
+        // document.write(aa>=bb, '<br>');
+        // aa <= bb
+        // document.write(aa<=bb, '<br>');
+        // aa == bb
+        // document.write(aa==bb, '<br>');
+        // aa != bb
+        // document.write(aa!=bb, '<br>');
+        var cc = 10;
+        //document.write(aa > bb > cc); 
+        //aa > bb -> 참(true) = 1 / 1 > cc ->거짓(false) = 0
+        //참과 거짓 1, 0 변환이 된 후 비교가 이루어진다.
+        // 5. 논리연산자 
+        //=> 두개의 항을 비교(true, false)
+        //=> and(&&) : 모든 항이 참일때만 참값
+        //=> or(||(백틱)) : 모든 항이 거짓일때만 거짓
+        /* 30, 20, 10
+        => aa>bb 참
+        =>bb>cc 참 */
+        document.write("---- and ----", "<br>");
+        document.write(aa>bb && bb>cc, "<br>");
+        document.write(aa<bb && bb>cc, "<br>");
+        document.write(aa>bb && bb<cc, "<br>");
+        document.write(aa<bb && bb<cc, "<br>");
+        document.write("---- or ----", "<br>");
+        document.write(aa>bb || bb>cc, "<br>");
+        document.write(aa<bb || bb>cc, "<br>");
+        document.write(aa>bb || bb<cc, "<br>");
+        document.write(aa<bb || bb<cc, "<br>");
+    </script>
+</head>
+<body>
+</body>
+</html>

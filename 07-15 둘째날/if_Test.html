@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정명훈_If_Test</title>
+    <script>
+        //1.변수에 어떠한 숫자를 정의한 후
+        //2. 숫자를 정의한 변수에 나누기 2한 값을 저장한 변수를 새로 만들고
+        //3. body에 출력하기
+        //4. 새로만든 변수가 홀수인지 짝수인지를 판별하기 (%,==)
+        //=>만약 홀수면 '홀수입니다' 출력 짝수면 '짝수입니다' 출력
+        //=>앞의 조건식이 모두 거짓이면 '숫자가 아닙니다'출력.
+        var n1 = 50;
+        var n2 = n1/2;
+        document.write(n1, "<br>");
+        document.write(n2, "<br>");
+
+        if(n2%2==0)
+        {
+            document.write("짝수입니다.");
+        }
+        else if(n2%2!=0){  //n2%2==1 로 실행해도 가능.
+            document.write("홀수입니다.");
+        }
+        else{
+            document.write("숫자가 아닙니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

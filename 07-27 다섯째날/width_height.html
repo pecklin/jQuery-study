@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width_height</title>
+    <style>
+        *{
+            margin: 0;
+            height: 0;
+        }
+        html, body{
+            height: 100%;
+            /* => 현재 모니터 영역(윈도우 영역)을
+            세로 100%인식한다고 정의하기 */
+        }
+        #box{
+            width: 33.3333%;
+            height: 100vh;
+            background-color: red;
+        }
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        // 1. css명령 사용
+        // $(선택자).css("필요한 속성명');
+        $(document).ready(function(){
+            // 1)
+            //  var ww = $('s', 'width' );
+            // => 1000px + 200px
+            // => 단위값은 문자이므로 수식의 연산을 할 수 없음.
+            // alert(ww);
+            // var ww = parseInt($('#box'.css('width')));
+            /* => parseInt : 정수값
+            => 소수점이 없는 수
+            => 예) 1 */
+            // var ww = parseFloat($('#box').css('width'));
+            // => parseFloat : 실수값
+            // => 소수점이 있는 수
+            // 예) 1.1* ;
+            // alert(ww);
+
+            // 2)
+            // width(), height();
+            // => 요소의 가로세로값 반환하거나 변경하기
+            // var ww = $('#box').width(500);
+
+            var ww = $(window).width();
+            var wh = $(window).height();
+            $('#box').css({
+               width: ww,
+               height: wh*3,
+               backgroundColor: "blue"
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

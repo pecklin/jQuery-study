@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul, li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0px;
+        }
+        #menu_wrap{
+            width: 80%;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #c6c6c6;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+        .menu{
+            width: 100%;
+            border-bottom: 1px solid #999;
+        }
+        .menu:last-child{
+            border-bottom: 0;
+        }
+        .btn{
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            display: flex;
+            font-size: 18px;
+            color: #fff;
+            padding: 0 20px;
+            box-sizing: border-box;
+            display: flex;
+            /* 자식요소들의 수직, 수직수평배치, 줄바꿈, 배치방향... */
+            justify-content: space-between; /* 자식 요소들 간의 수평방향 정렬방식 설정 */
+            /* 1) left: 왼쪽에서의 정렬
+            2) flex-start : 시작점인 왼쪽에서 오른쪽으로 배치
+            3) flex-end : 끝점인 오른쪽에서 왼쪽으로 배치
+            4) center : 자식을 부모의 중앙 배치
+            5) space-between : 부모박스에 자식박스들의 값을 뺀 여백을 동일하게 나누어 배분, 양끝 여백x(한쪽여백지정)
+            6) space-around : 부모박스에 자식박스들의 값을 뺀 여백을 동일하게 나누어 배분, 양끝 여백 o(한쪽 여백지정) */
+            align-items: center;
+            /* 자식요소들간의 수직방향 정렬방식 설정 */
+        }
+        .menu.on > .btn{
+                background-color: orangered;
+        }
+        .submenu{
+            padding: 20px;
+            display: none;
+        }
+        .submenu > li{
+            border-bottom: 1px solid #acacac;
+        }
+        .submenu > li:last-child{
+            border-bottom: 0;
+        }
+        .submenu > li > a{
+            width: 100%;
+            font-size: 16px;
+            padding: 7px 10px;
+            color: #333;
+            display: block;
+            box-sizing: border-box;
+        }
+        .menu.on .submenu{
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.btn').click(function(){
+                // .menu에게 .on클래스가 있는경우
+                if($(this).parent('.menu').hasClass('on')===true){
+                    /* .hasClass()
+                    =>클래스가 있는지 확인하는 method 
+                    =>== : 동등연산자 
+                    =>=== : 일치연산자 */
+                    $(this).parent('.menu').removeClass('on');
+                }
+                // .menu에게 .on클래스가 없는경우
+                else{
+                    $(this).parent('.menu').addClass('on');
+                    // => .on 클래스 없으면 해당 클래스 추가
+                    $(this).parent('.menu').siblings().removeClass('on');
+                    // => 클릭한 '그' 선택자의 부모 형제자매 .menu 에 있는 .on 클래스 제거 
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="menu_wrap">
+        <li class="menu on">
+            <h5 class="btn">메뉴1 <i class="fas fa-chevron-down"></i></h5>
+            <ul class="submenu">
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+            </ul>
+        </li>
+        
+        <li class="menu">
+            <h5 class="btn">메뉴2 <i class="fas fa-chevron-down"></i></h5>
+            <ul class="submenu">
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu">
+            <h5 class="btn">메뉴3 <i class="fas fa-chevron-down"></i></h5>
+            <ul class="submenu">
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

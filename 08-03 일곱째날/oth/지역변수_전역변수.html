@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역_전역변수</title>
+    <script src="../../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            /* 변수
+            1. 전역변수
+            => 내문서의 전체에서 사용가능한 변수
+            => 기존 함수 외부에서 var 변수를 선언하거 또는 
+            함수 내부에서 var빼고 선언
+            2. 지역변수
+            => 지정된 영역에서 사용가능한 변수
+            => 함수 내부에서 var 선언 */
+
+            var a="a전역변수";
+            function gg(){
+                var b="b지역변수"
+                c="c전역변수";
+
+                document.write(a+"함수내부" + "<br>");
+                document.write(b+"함수내부" + "<br>");
+                document.write(c + "함수내부" + "<br><br>");
+            }
+            gg(); //함수호출
+            document.write(a+"함수외부" + "<br>");
+            document.write(c+"함수외부" + "<br>");
+            document.write(b+"함수외부" + "<br>");
+
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

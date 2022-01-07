@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐색구문</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 탐색구문
+            // 1. 자식 요소 선택 => .children()
+            $('li').children('#one').css('color', 'red');
+
+            //2. 부모 요소 선택 => .parent()
+            $('#txt1').parent().css('background-color', 'red');
+            $('p').parent().css({
+                width: '100%',
+                height: 400,
+                backgroundColor: 'blue'
+            });
+
+            //3. 형제자매 요소 선택 => .siblings()
+            $('span').siblings('em').css('color', 'purple');
+            //4. 자손 요소 선택 => .find()
+            $('ul').find('*').css('color', 'green');
+            // => 어떤 선택자의 안쪽에 있느 모든 자손요소에게
+            // 명령을 할 때 *(전체선택자) 사용 
+            // 5. 순서값 선택 => .eq()
+            $('.list').eq(2).css({
+                margin:'50px',
+                backgroundColor: 'Red',
+                color: 'white'
+            })
+            //6. 형제자매요소 중 바로 다음에 나오는 요소 선택
+            // => .next()
+            $('.list').eq(0).next().css({
+                width:300,
+                height: 300,
+                lineHeight: '300px',
+                backgroundColor: 'pink'
+            });
+            //7. 형제자매 요소 중 바로 이전에 나오는 요소 선택
+            // => .prev()
+            $('.list').eq(1).prev().css('color','blue');
+            //8. 특정 요소를 제외 => .not()
+            $('.list').not('.abc').css({
+                width:800,
+                backgroundColor: 'green'
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 1. children 예제 -->
+    <ul>
+        <li>
+            <span id="one">list</span>
+        </li>
+        <li><span>list</span></li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+    </ul>
+
+    <!-- 2. parent 예제 -->
+    <p>
+        <span id="txt1">text1</span>
+    </p>
+    <p>
+        <span id="txt2">text2</span>
+    </p>
+
+    <!-- 3.siblings 4.find예제 -->
+    <ul>
+        <li>
+            <span>test1</span>
+            <em>siblings</em>
+            <p>test1-siblings</p>
+        </li>
+        <li>
+            <span class="abc">test2</span>
+            <em>siblings</em>
+        </li>
+        <li>
+            <span>test3</span>
+            <em>siblings</em>
+        </li>
+    </ul>
+
+    <!-- 5.eq 6.next 7.prev 8.not예제 -->
+    <ul>
+        <!-- eq순서는 0부터 시작 -->
+        <li class="list">리스트1</li>
+        <li class="list abc">리스트2</li>
+        <li class="list">리스트3</li>
+        <li class="list">리스트4</li>
+    </ul>
+</body>
+</html>

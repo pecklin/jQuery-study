@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <script src="../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 타이머 함수 => 시간에 따른 객체의 형태를 반복적으로 호출할 수 있도록 하는 함수 명령
+            // 1. 지정시간 이후에 한 번만 호출되는 함수
+            // setTimeout(function(){
+            //     document.write('한번 출력 ');
+            // }, 1000);
+            // clearTimeout(참조할 변수명);
+            // => setTimeout 제거
+            // 2. 지정시간 마다 계속 호출되는 함수
+            // setInterval(function(){
+            //     document.write('계속 출력 ');
+            // }, 1000);
+            // clearInterval(참조할 변수명);
+            // => setInterval 제거
+
+            var a = setInterval(function(){
+                document.write('5번 출력 ');
+            }, 1000);
+            setTimeout(function(){
+                clearInterval(a);
+            },5000);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

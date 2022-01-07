@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisplayEffect</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .out_box{
+            width: 400px;
+            height: 500px;
+            border: 5px solid black;
+            float: left;
+            margin: 30px;
+        }
+        .button{
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: cornflowerblue;
+        }
+        .in_box{
+            width: 100%;
+            height: 400px;
+            background-color: cyan;
+            /* display: none; */
+
+        }
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            /* 
+            1. show_hide_toggle
+                1) .show(시간);
+                => 왼쪽 상단을 기준으로 크기가 커지면서 보임
+                2) .hide(시간);
+                => 왼쪽 상단을 기준으로 크기가 작아지면서 사라짐
+                3) .toggle(시간);
+                => show + hide (style="display: none";)
+            2. slide down_up_toggle
+                1) .slideDown(시간);
+                => 위쪽에서 슬라이드 되면서 내려옴
+                2) .slideUp(시간);
+                => 슬라이드 되면서 위로 올라감
+                3) .slideToggle(시간);
+                => slideDown + slideUp
+            3. fade in_out_toggle (style="display: none";)
+                1) .fadeIn(시간);
+                => 제자리에서 투명도 값이 0(투명)에서 1(불투명)이 되면서 천천히 보여짐
+                2) .fadeOut(시간);
+                => 제자리에서 투명도 값이 1(불투명)에서 0(투명)이 되면서 천천히 사라짐
+                3) .fadeToggle(시간);
+                => fadeIn + fadeOut (style="display: none";)
+            */
+
+            // 보여짐 => display: block , 사라짐 => display: none
+            // 보여짐과 사라짐의 명령지정시 태그스티알(style="block/none";)로 지정
+
+            // 시간 생략가능(JS에서 1초는 1000초)
+            // => 숫자 / fast, slow (문자이기때문에 ''에 묶어서 작성)
+           $('#toggle_button').click(function(){
+                // $('#toggle_box').show(500); 
+                // $('#toggle_box').hide(500);    
+                $('#toggle_box').toggle(500);
+           });
+           $('#slide_button').click(function(){
+                // $('#slide_box').slideDown(500);
+                // $('#slide_box').slideUp(500);
+                $('#slide_box').slideToggle('slow');
+           });
+           $('#fade_button').click(function(){
+                // $('#fade_box').fadeIn(500);
+                // $('#fade_box').fadeOut(500);
+                $('#fade_box').fadeToggle(500);
+           });
+        });
+    </script>
+</head>
+<body>
+    <div class="out_box">
+        <div class="button" id="toggle_button">
+            show+hide
+        </div>
+        <div class="in_box" id="toggle_box">
+            show, hide, toggle
+        </div>
+    </div>
+
+    <div class="out_box">
+        <div class="button" id="slide_button">
+            slide Up_Down
+        </div>
+        <div class="in_box" id="slide_box">
+            slideUp, slideDown, slideToggle
+        </div>
+    </div>
+
+    <div class="out_box">
+        <div class="button" id="fade_button">
+            Fade In_Out
+        </div>
+        <div class="in_box" id="fade_box">
+            FadeIn, FadeOut
+        </div>
+    </div>
+
+</body>
+</html>

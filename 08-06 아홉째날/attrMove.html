@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attrMove - 객체이동</title>
+    <script src="../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #out_box{
+            width: 1500px;
+            height: 300px;
+            border: 10px solid red;
+            margin: 50px auto;
+        }
+        #out_box > img{
+            width: 300px;
+            height: 300px;
+            float: left;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //객체 이동명령
+            // 1. $('이동객체선택').appendTo('이동객체의 부모객체 또는 이동영역 선택');
+            // => 선택한 객체를 이동영역 안쪽 뒤로 보내기
+            // $('img').first().appendTo('#out_box');
+            // 2. $(이동객체선택).prependTo('이동객체의 부모객체 또는 이동영역 선택');
+            // => 선택한 객체를 이동영역 안쪽 앞으로 보내기
+            // $('img').last().prependTo('#out_box');
+            // 3. $('이동객체선택').insertFater().('이동영역');
+            // => 선택한 객체를 이동영역 밖으로 뒤로 보내기
+            // $('img').first().insertAfter('#out_box');
+            // 4. $('이동객체선택').insertBefore('이동영역');
+            // => 선택한 객체를 이동영역 밖으로 앞쪽 내보내기
+            // $('img').last().insertBefore('#out_box');
+
+            // 1초마다 첫번째 이미지를 선택해서 부모박스 안쪽 뒤로 보내기
+
+            // var img_num = 0;
+            function time(){
+                auto = setInterval(function(){
+                    // img_num ++;
+                    // if(img_num > 4)
+                    // {
+                    //     img_num = 0;
+                    // }
+                    $('#out_box > img').first().appendTo('#out_box');
+                }, 1000);
+            }
+            time();
+        }); //end
+    </script>
+</head>
+<body>
+    <div id="out_box">
+        <img src="./img/img/1.jpg" alt="img1">
+        <img src="./img/img/2.jpg" alt="img2">
+        <img src="./img/img/3.jpg" alt="img3">
+        <img src="./img/img/4.jpg" alt="img4">
+        <img src="./img/img/5.jpg" alt="img5">
+
+    </div>
+</body>
+</html>

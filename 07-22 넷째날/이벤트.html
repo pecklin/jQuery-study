@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: darkcyan;
+            border: 10px solid black;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            //마우스 이벤트
+            // 1. .mouseMove
+            // => 마우스가 ㅇ무직일때 이벤트 실행
+            // 2. .mouseEnter()
+            // => 마우스가 객체영역 안으로 들어갔을때 이벤트 실행
+            // 3. .mouseDown()
+            // => 마우스를 눌렀을때 이벤트 실행
+            // 4. .mouseUp()
+            // => 마우스를 위로 올렸을때 이벤트 실행 (마우스 클릭 후 뗄때)
+            // 5. .mouseLeave()
+            // => 마우스가 객체 영역 밖으로 나왔을때 이벤트 실행
+            // 6. .hover()
+            // => mouseEnter + mouseLeave 의 결합형태
+            // 7. .click()
+            // => mouseDown + mouseUp 의 결합형태
+
+            // 마우스 이벤트 형태
+            // 1. on 연결명령 사용하는 형태 (이벤트 바인딩)
+            /* $('선택자').on({
+                click:function(){
+                    // 클릭 입네트 발생시 실행되는 실행식
+                },
+                mouseEnter: function(){
+                    // 이벤트 발생시 실행되는 실행식
+                },
+                mouseLeave:function(){
+                    // 이벤트 발생시 실행되는 실행식
+                }
+            }); */
+
+            // 2. 이벤트 자체가 명령으로 사용하는 형태
+            /* $('선택자').이벤트이름(function(){
+                이벤트 발생시 실행되는 실행식
+            }), 이벤트명(function(){
+                두번째 -> 이벤트 발생시 실행되는 실행식
+            }); */
+
+            /* $('선택자').hover(function(){
+                mouseEnter 실행식  
+            }, function(){
+                mouseLeave 실행식
+            }); */
+
+            $('div').click(function(){
+                $(this).css('backgroundColor', 'salmon');
+            });
+
+            /* $(this)선택자
+            => 선택되어진 객체 안에서 자신을 다시 선택할 때
+            객체 자기 자신을 의미한다. (바로 '그' 선택자) */
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

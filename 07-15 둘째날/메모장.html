@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응애</title>
+    <script>
+        var backend = ['Java', 'Ruby', 'PHP', 'NodeJS', 'etc'];
+        var frontEnd = ['HTML/CSS/JS', "Typescript", 'Python', 'Java', 'etc'];
+        var FrameWork = ['React', 'Vue.js', 'Django', 'JQuery', 'Spring', 'etc'];
+
+        var backLang = prompt('언어', 'Default');
+        var frontLang = prompt('언어', 'Default');
+        var FrameLang = promt('프레임워크', 'Default');
+
+        var myLang = [4];
+        var myLangNum = 0; 
+        if(backLang != null)
+        {
+            for(var i =0; i<backend.length-1; i++)
+            {
+                if(backLang == backend[i]){
+                    myLang[myLangNum] = backLang;
+                    myLangNum++;
+                }
+                else if(backLang == "Default")
+                {
+                    alert('이름을 입력해주세요 ');
+                }
+                else{
+                    alert(myLang[backLang.length]);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

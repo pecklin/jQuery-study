@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Def_01</title>
+    <script>
+        // 함수
+        // => 반복적인 행동을 그룹화 할때 사용
+        // => 필요할때 호출해서 사용
+        // 1. 선언적 함수
+        // => 함수명이 있는 함수
+        // => 윈도우가 로드시에 script태그를 만나면
+        // 가장 먼저 선언적 함수를 찾아서 읽음
+        // => 선언적함수의 호출은 정의영역의 위치와 상관이 없다.
+        // => 선언적 함수의 정의 
+        // function 함수명(매개변수, 매개변수 ... or x){
+            // 반복적으로 실행할 실행식 삽입영역
+        // }
+        // 함수의 호출
+        // 함수명(매개변수값, 매개변수값 ... or x);
+        name_f(6);
+        function name_f(x){
+            var a = x*x;
+            document.write(a, "<br>");
+        }
+        name_f(3);
+        // 2. 익명함수
+        // => 함수명이 없는 함수
+        // 변수에 대입해서 사용
+        // 항상 정의가 먼저
+        // 호출 후에 이루어짐
+        // =>익명함수 정의
+
+        /* var 변수명 = function(매개변수, 매개변수 ... or x){
+            함수 호출시 실행되는 실행식
+        } */
+        // => 함수 호출
+        // 변수명(매개변수 값, 매개변수 값 ... or x);
+        // none_f(3);
+        var none_f = function(x){
+            var a = x*x;
+            document.write(a, "<br>");
+        }
+        none_f(5);
+
+        // 매개변수
+        // => 함수의 결과값을 좌지우지하는 변수
+        // => 생략가능
+        // => 변수명으로 대입 x
+        // => 자리의 위치값으로 대입하여
+        // => 함수 내부에서만 동일한 명칭으로 사용가능
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

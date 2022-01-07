@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+    <script>
+        // if조건문
+        // => 어떠한 조건이 참일때 실행하는 문장을 의미함
+
+        // 1. if문 => if(조건식){ 조건식이 참일때만 실행하는 실행식 }
+        var a = 'abc';
+        var b = 30;
+        /*if(a>b)
+        {
+            document.write('a가 b보다 큽니다.');
+        } */
+        // => a는 문자, b는 숫자이므로 비교불가.
+        // => 조건이 충족되어지지 못하므로 아무것도 출력하지 않음
+
+        //2. if~else문 => if(조건식){ 조건이 참일때만 실행하는 실행식 } else{ 앞에 있는 if문의 조건식이 거짓일때만 실행하는 실행식}
+        /* if(a<b){
+            document.write("a가 b보다 작습니다.");
+        }else{
+            document.write("a와 b는 비교할 수 없습니다.");
+        } */
+
+        //3. if ~ else if ~ else문 => 조건식이 여러개일떄 사용하는 형태
+        /* if(조건식 1){
+            조건식 1이 참일때 실행하는 실행식
+        }else if(조건식 2){
+            조건1이 거짓이면서 조건식 2가 참일떄 실행
+        }else if(조건식 3){
+            조건1과 조건2가 거짓이고 조건3이 참일때 실행
+        }... 조건식 무한히 증가 감수 
+        else{
+            앞의 모든 조건이 거짓이라면 실행.
+            =>else문은 생략 가능.
+        } */
+
+        if(a>b){
+            document.write('a가 b보다 큽니다.');
+        }else if(a<b){
+            document.write('a가 b보다 작습니다.')
+        }else if(a==b){
+            document.write('a와 b가 같습니다.');
+        }else{
+            document.write('비교할 수 없습니다.');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

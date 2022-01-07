@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script>
+        function mult(num1, num2)
+        {
+            var res = num1 * num2;
+            document.write(num1+" x "+num2+" = "+res + "<br>");
+        }
+
+        function for_def(startN, isTwoComp)
+        {
+            if(isTwoComp==0)
+            {
+                for(var i = 0; i<=10; i+=2)
+                {
+                    mult(startN, i);
+                }
+            }
+            else if(isTwoComp==1)
+            {
+                for(var i=1; i<10; i+=2)
+                {
+                    mult(startN, i);
+                }
+            }
+        }
+
+        var number = Number(prompt("0~100까지의 숫자를 입력해주세요"), '');
+        
+        for(var oneH = number; oneH <= 100 ; oneH++)
+        {
+            var twoComp = oneH % 2
+            document.write("------------"+oneH+"단------------<br>");
+            if(twoComp == 0)
+            {
+                for_def(oneH, 0)
+            }
+            else if(twoComp == 1)
+            {
+                for_def(oneH, 1);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌우무한대반복화살표갤러리</title>
+    <script src="../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var slide=$('#img_wrap > img').width();
+            $('#next').click(function(){
+                $('#img_wrap').stop().animate({
+                    left: -slide
+                }, function(){
+                    $('#img_wrap').css({
+                        left: 0
+                    }).find('img').first().appendTo('#img_wrap');
+                });
+            });
+            $('#prev').click(function(){
+                $('#img_wrap').stop.animate({
+                    left: slide 
+                },function(){
+                    $('#img_wrap').css({
+                        left: 0
+                    }).find('img').last().prependTo('#img_wrap');
+                });
+            });
+
+            $('.but').hover(function(){
+                clearInterval(auto);
+            },function(){
+                time();
+            });
+
+            // $('.but').hover(function(){
+            //     time();
+            // }, function(){
+            //     clearInterval(auto);
+            // });
+
+            // 자동반복 1) 1초마다 right에 지정된 클릭이벤트 실행 / .but에 mouseenter 자동으로 반복을 멈췄다가 다시 떼면 시작.
+            function time(){
+                auto = setInterval(function(){  //var로 선언시 지역변수라서 위에서 hover 부분에서 인식불가.
+                    $('#next').trigger('click');
+                }, 1000);
+            }
+            time();
+
+        }); //end
+    </script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #mask{
+            width: 620px;
+            height: 520px;
+            border: 10px solid red;
+            margin: 0 auto;
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        #img_wrap{
+            width: 3000px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 10px solid blue;
+            display: flex;
+            justify-content: left;
+            /* 수평 */
+            align-items: center;
+            /* 수직 */
+        }
+        #img_wrap > img{
+            width: calc(100% / 5);
+            height: 500px;
+        }
+        .but{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            text-align: center;
+            line-height: 100px;
+            font-size: 100px;
+            position: absolute;
+            top: calc(50% - 50px);
+        }
+        #prev{left: 0;}
+        #next{right: 0;}
+    </style>
+</head>
+<body>
+    <div id="mask">
+        <div id="img_wrap">
+            <img src="./img/img/1.jpg" alt="">
+            <img src="./img/img/2.jpg" alt="">
+            <img src="./img/img/3.jpg" alt="">
+            <img src="./img/img/4.jpg" alt="">
+            <img src="./img/img/5.jpg" alt="">
+        </div>
+        <h1 class="but" id="prev">&lt;</h1>
+        <h1 class="but" id="next">&gt;</h1>
+    </div>
+</body>
+</html>

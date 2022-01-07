@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event</title>
+    <script src="../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 스크롤 이벤트
+            // => 스크롤변화 발생시 호출
+            /* $('선택자').scroll(function(){
+                발생시 실행식
+            }); */
+
+            // $(window).scroll(function(){
+            //     $('#box').css('backgroundColor', 'blue');
+            // }); //스크롤시 파란색으로 변경
+
+            $('#box').click(function(){
+                // 윈도우의 스크롤 움직이게 하기
+                $('html, body').animate({
+                    scrollTop: 500,
+                    // scrollLeft: 500
+                },3000).animate({
+                    scrollLeft: 500
+                }, 3000);
+            });
+        }); //end
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 3000px;
+            height: 3000px;
+        }
+        #box{
+            width: 800px;
+            height: 800px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
